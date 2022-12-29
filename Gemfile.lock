@@ -1,0 +1,69 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.684.0)
+    aws-sdk-core (3.168.4)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.5)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-sqs (1.52.1)
+      aws-sdk-core (~> 3, >= 3.165.0)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.5.2)
+      aws-eventstream (~> 1, >= 1.0.2)
+    declarative (0.0.20)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
+    http (5.1.0)
+      addressable (~> 2.8)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.4.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    jmespath (1.6.2)
+    llhttp-ffi (0.4.0)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
+    multi_json (1.15.0)
+    public_suffix (5.0.0)
+    rake (13.0.6)
+    representable (3.2.0)
+      declarative (< 0.1.0)
+      trailblazer-option (>= 0.1.1, < 0.2.0)
+      uber (< 0.2.0)
+    roar (1.1.1)
+      representable (~> 3.0)
+    thor (1.2.1)
+    trailblazer-option (0.1.2)
+    uber (0.1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  aws-sdk-sqs (~> 1.48)
+  figaro (~> 1.2)
+  http (~> 5)
+  multi_json (~> 1.15)
+  roar (~> 1.1)
+
+RUBY VERSION
+   ruby 3.1.2p20
+
+BUNDLED WITH
+   2.3.23
