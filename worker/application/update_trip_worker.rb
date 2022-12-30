@@ -18,25 +18,25 @@ module ComfyWings
       puts "Update DateTime: #{Time.now}"
 
       # Notify administrator of unique clones
-      if update_trips.positive?
+      if update_trips.any?
         # TODO: Email administrator instead of printing to STDOUT
-        puts "\tNumber of trips updated: #{@update_trips_num}"
+        puts "\tNumber of trips updated: #{@update_trips.count}"
       else
-        puts "\tNo cloning reported in this period"
+        puts "\tNo trips updated in this period"
       end
     end
 
     def update_trips
-      @update_trips_num = 0
+      @update_trips = []
       @queue.poll do |code|
-        http_response = HTTP.put("#{@config.API_HOST}/api/trips/#{code}/update")
-        if http_response.status.success?
-          @update_trips_num += 1
-        else
-          puts "Update TripQuery: #{code} failed"
+        puts code
+        unless @update_trips.include? code
+          http_response = HTTP.put("#{@config.API_HOST}/api/trips/#{code}/update")
+          @update_trips.append(code) if http_response.status.success?
+          puts "Update TripQuery: #{code} failed" unless http_response.status.success?
         end
       end
-      @update_trips_num
+      @update_trips
     end
   end
 end
