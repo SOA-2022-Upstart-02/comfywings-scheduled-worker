@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-USERNAME = 'java9527'
+USERNAME = 'chiuzu'
 IMAGE = 'comfywings-update_worker'
 VERSION = '0.1.0'
 
